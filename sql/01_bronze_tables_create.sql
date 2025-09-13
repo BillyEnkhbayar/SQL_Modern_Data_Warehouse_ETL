@@ -101,24 +101,24 @@ BEGIN
 END;
 
 ---------------------------------------------------------------
--- C) Parquet source → bronze.events_parquet_raw
--- Based on columns observed in events_2mo (parquet):
+-- C) csv source → bronze.events_csv_raw
+-- Based on columns observed in events_2mo:
 -- SessionID, CustomerID, EventType, EventTS, Amount, Channel, IsCardPresent
 ---------------------------------------------------------------
 
-IF OBJECT_ID('bronze.events_parquet_raw') IS NULL
+IF OBJECT_ID('bronze.events_csv_raw') IS  NULL
 BEGIN
-    CREATE TABLE bronze.events_parquet_raw
-    (
-        SessionID       NVARCHAR(100)   NULL,
-        CustomerID      BIGINT          NULL,
-        EventType       NVARCHAR(50)    NULL,  -- e.g., login, add_card, pos_swipe
-        EventTS         DATETIME2(3)    NULL,
-        Amount          DECIMAL(18,2)   NULL,  -- if present on event
-        Channel         NVARCHAR(50)    NULL,  -- ONLINE / POS / APP
-        IsCardPresent   BIT             NULL,
-        -- lineage
-        _load_file      NVARCHAR(4000)  NULL,
-        _load_ts        DATETIME2(3)    NOT NULL DEFAULT SYSUTCDATETIME()
-    );
-END;
+CREATE TABLE bronze.events_csv_raw
+(
+    SessionID       NVARCHAR(100)   NULL,
+    CustomerID      BIGINT          NULL,
+    EventType       NVARCHAR(50)    NULL,    -- e.g., login, add_card, pos_swipe
+    EventTS         DATETIME2(3)    NULL,    -- ISO-8601 preferred
+    Amount          DECIMAL(18,2)   NULL,
+    Channel         NVARCHAR(50)    NULL,    -- ONLINE / POS / APP
+    IsCardPresent   BIT             NULL,
+
+    -- lineage
+    _load_file      NVARCHAR(4000)  NULL,
+    _load_ts        DATETIME2(3)    NOT NULL DEFAULT SYSUTCDATETIME()
+);
