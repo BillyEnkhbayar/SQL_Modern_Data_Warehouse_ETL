@@ -8,7 +8,7 @@ The project showcases my ability to design, build, and optimize end-to-end ETL p
 **Architecture:** Medallion (Bronze, Silver, Gold layers)
 
 <p align="center">
-  <img width="600" alt="SQL Data Warehouse Architecture" src="https://github.com/user-attachments/assets/4909e196-3b49-4fca-b061-e7e48b812c0f" />
+  <img width="1000" alt="SQL Data Warehouse Architecture" src="https://github.com/user-attachments/assets/4909e196-3b49-4fca-b061-e7e48b812c0f" />
 </p>
 
 **Source Data** (AI-Generated):
