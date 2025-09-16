@@ -13,11 +13,11 @@ The project showcases my ability to design, build, and optimize end-to-end ETL p
 
 **Source Data** (AI-Generated):
 
-  transactions_2mo.csv → transaction-level data
+- **transactions_2mo.csv** → transaction-level data
   
-  events_2mo_fallback.csv → customer event logs
+- **events_2mo_fallback.csv** → customer event logs
   
-  customers_profile.json → customer demographic & profile info
+- **customers_profile.json** → customer demographic & profile info
 
 **Database:** SQL Server (procedural ETL using Stored Procedures)
 
@@ -28,21 +28,21 @@ The project showcases my ability to design, build, and optimize end-to-end ETL p
 
 Here’s the high-level design of the warehouse:
 
-  **Bronze**: Raw ingestion of CSV/JSON into staging tables
+- **Bronze**: Raw ingestion of CSV/JSON into staging tables
 
-  **Silver**: Cleaned, typed, standardized tables with deduplication & JSON flattening
+- **Silver**: Cleaned, typed, standardized tables with deduplication & JSON flattening
 
-  **Gold**: Star schema with Fact & Dimension tables (transactions, events, customers, dates)
+- **Gold**: Star schema with Fact & Dimension tables (transactions, events, customers, dates)
 
-  **Outputs**: Power BI / Tableau dashboards, ML-ready datasets, and ad-hoc SQL queries
+- **Outputs**: Power BI / Tableau dashboards, ML-ready datasets, and ad-hoc SQL queries
   
 
   📈 **Business Use Cases**
 
-  **Customer 360° View**: Track customer activity, events, and transactions
+- **Customer 360° View**: Track customer activity, events, and transactions
 
-  **Churn Analysis**: Identify drop-off patterns from event logs and transaction gaps
+- **Churn Analysis**: Identify drop-off patterns from event logs and transaction gaps
 
-  **Revenue Insights**: Aggregate sales by customer segments, merchants, and time periods
+- **Revenue Insights**: Aggregate sales by customer segments, merchants, and time periods
 
-  **Event Funnels**: Analyze customer behavior across event types
+- **Event Funnels**: Analyze customer behavior across event types
